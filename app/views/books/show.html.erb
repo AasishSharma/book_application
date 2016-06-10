@@ -11,10 +11,10 @@
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back', books_path %><br>
 
 <% @book.articles.each_with_index do |article, index| %>
 	<%= link_to article.title, book_article_path(@book, article) %>
-<% end%>
+<% end%><br>
 
 <%= link_to 'New Article', new_book_article_path(@book,@article) %>
