@@ -16,3 +16,5 @@
 <% @article.sections.each_with_index do |section, index| %>
 	<%= link_to section.title, book_article_section_path(@book,@article,section) %>
 <% end%>
+
+<%= link_to 'New Section', new_book_article_section_path(@book,@article,@section) %>

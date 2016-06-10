@@ -16,3 +16,5 @@
 <% @book.articles.each_with_index do |article, index| %>
 	<%= link_to article.title, book_article_path(@book, article) %>
 <% end%>
+
+<%= link_to 'New Article', new_book_article_path(@book,@article) %>
