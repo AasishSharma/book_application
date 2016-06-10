@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each_with_index do |comment, index| %>
+    <% @section = comment.section %>
+    <% @article = @section.article %>
+    <% @book = @article.book %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= link_to 'Show', book_article_section_comment_path(@book,@article,@section,comment) %></td>
+        <td><%= link_to 'Edit', edit_book_article_section_comment_path(@book,@article,@section,comment) %></td>
+        <td><%= link_to 'Destroy', book_article_section_comment_path(@book,@article,@section,comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comment', new_book_article_section_comment_path %>
